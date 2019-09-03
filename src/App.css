@@ -1,0 +1,74 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Rancho', cursive;
+    font-size: 1rem;
+}
+
+.login-seccion{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    /* background-image: url(./img/fondo.jpg); */
+    background-color: antiquewhite;
+}
+
+.login-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-logo{
+    display: flex;
+    flex-direction: row;
+}
+
+.login-img{
+    height: 200px;
+    margin: 10px;
+}
+
+.login-body{
+    display: flex;
+    flex-direction: row;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: aliceblue;
+    border-radius: 15px;
+}
+
+.login-email, .login-password, .login-text, .login-button, .login-button-two, .login-text-two{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+
+.login-button, .login-button-two{
+    width: 200px;
+    height: 30px;
+    justify-content: center;
+    border-style: none;
+    background: cadetblue;
+    border-radius: 15px;
+    color: white;
+}
+
+.login-email, .login-password{
+    width: 200px;
+    height: 30px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.login-text, .login-text-two{
+    text-decoration: none;
+    color: cornflowerblue;
+}
