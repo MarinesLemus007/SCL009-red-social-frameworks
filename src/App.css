@@ -6,7 +6,7 @@
     font-size: 1rem;
 }
 
-.login-seccion{
+.login-seccion, .register-seccion{
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -15,43 +15,47 @@
     background-color: antiquewhite;
 }
 
-.login-content{
+.login-content, .register-content{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.login-logo{
+.login-logo, .register-logo{
     display: flex;
     flex-direction: row;
 }
 
-.login-img{
+.login-img, .register-img{
     height: 200px;
     margin: 10px;
 }
 
-.login-body{
+.login-body, .register-body{
     display: flex;
     flex-direction: row;
 }
 
-.login-form{
+.login-form, .register-form{
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: aliceblue;
     border-radius: 15px;
+    /* width: 270px;
+    height: 270px; */
 }
 
-.login-email, .login-password, .login-text, .login-button, .login-button-two, .login-text-two{
+.login-email, .login-password, .login-text, .login-button, .login-button-two, .login-text-two
+.register-nickname, .register-email,.register-password, .register-password-two, .register-button, .register-button-two{
     display: flex;
     flex-direction: row;
     margin: 10px;
 }
 
 
-.login-button, .login-button-two{
+.login-button, .login-button-two,
+.register-button, .register-button-two{
     width: 200px;
     height: 30px;
     justify-content: center;
@@ -61,14 +65,18 @@
     color: white;
 }
 
-.login-email, .login-password{
+.login-email, .login-password,
+.register-nickname, .register-email,.register-password, .register-password-two{
     width: 200px;
     height: 30px;
     border-radius: 15px;
     text-align: center;
 }
 
+.link{
+    text-decoration: none; 
+}
+
 .login-text, .login-text-two{
-    text-decoration: none;
     color: cornflowerblue;
 }
