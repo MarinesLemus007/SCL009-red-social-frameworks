@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0aecc711eb90495baa0b18e9e1e00ae1",
+    "revision": "6b7a910322a798a9563dc074fcfaa364",
     "url": "/SCL009-red-social-frameworks/index.html"
   },
   {
