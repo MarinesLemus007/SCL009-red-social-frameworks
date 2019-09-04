@@ -6,7 +6,7 @@
     font-size: 1rem;
 }
 
-.login-seccion, .register-seccion{
+.login-seccion, .register-seccion, .forgetpassword-seccion{
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -15,28 +15,28 @@
     background-color: antiquewhite;
 }
 
-.login-content, .register-content{
+.login-content, .register-content, .forgetpassword-content{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.login-logo, .register-logo{
+.login-logo, .register-logo, .forgetpassword-logo{
     display: flex;
     flex-direction: row;
 }
 
-.login-img, .register-img{
+.login-img, .register-img, .forgetpassword-img{
     height: 200px;
     margin: 10px;
 }
 
-.login-body, .register-body{
+.login-body, .register-body, .forgetpassword-body{
     display: flex;
     flex-direction: row;
 }
 
-.login-form, .register-form{
+.login-form, .register-form, .forgetpassword-form{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,8 +46,9 @@
     height: 270px; */
 }
 
-.login-email, .login-password, .login-text, .login-button, .login-button-two, .login-text-two
-.register-nickname, .register-email,.register-password, .register-password-two, .register-button, .register-button-two{
+.login-email, .login-password, .login-text, .login-button, .login-button-two, .login-text-two,
+.register-nickname, .register-email,.register-password, .register-password-two, .register-button, .register-button-two,
+.forgetpassword-email, .forgetpassword-button, .forgetpassword-button-two{
     display: flex;
     flex-direction: row;
     margin: 10px;
@@ -55,7 +56,8 @@
 
 
 .login-button, .login-button-two,
-.register-button, .register-button-two{
+.register-button, .register-button-two,
+.forgetpassword-button, .forgetpassword-button-two{
     width: 200px;
     height: 30px;
     justify-content: center;
@@ -66,7 +68,8 @@
 }
 
 .login-email, .login-password,
-.register-nickname, .register-email,.register-password, .register-password-two{
+.register-nickname, .register-email,.register-password, .register-password-two,
+.forgetpassword-email{
     width: 200px;
     height: 30px;
     border-radius: 15px;
@@ -79,4 +82,107 @@
 
 .login-text, .login-text-two{
     color: cornflowerblue;
+}
+h2{
+    color: steelblue;
+}
+
+h4{
+    font-size: small;
+}
+
+.home-seccion{
+    display: flex;
+    flex-direction: row;
+    background-color: paleturquoise;
+    width: 100vw;
+}
+
+.home-nav{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 100px;
+}
+
+.home-logo, .home-options{
+    display: flex;
+    flex-direction: row;  
+}
+
+.home-img{
+   width: 70px; 
+}
+
+.home-options-one, .home-options-two, .home-options-three{
+    display: flex;
+    flex-direction: column;
+}
+
+.home-options{
+    width: 50%;
+    justify-content: space-between;
+}
+
+.home-seccion-two{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: antiquewhite;
+    height: 100vh;
+}
+
+.home-body{
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    background-color: gainsboro;
+    padding: 10px;
+    height: 110px;
+}
+
+.home-form{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.home-post{
+    display: flex;
+    flex-direction: column;
+}
+
+.home-body{
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    background-color: gainsboro;
+    padding: 10px;
+    height: 110px;
+}
+
+.home-form{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.home-post{
+    display: flex;
+    flex-direction: column;
+}
+
+.home-body-button{
+    flex-direction: column;
+    display: flex;
+    margin-top: 5px;
+}
+
+.home-button{
+    border-style: none;
+    background-color: plum;
+    border-radius: 15px;
+    height: 25px;
 }
