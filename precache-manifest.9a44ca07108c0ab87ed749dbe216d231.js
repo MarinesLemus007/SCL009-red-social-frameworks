@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8e9aa86491c188bd17df6a1477c36f3d",
+    "revision": "5b332fcc1696281e0dcc345933732177",
     "url": "/SCL009-red-social-frameworks/index.html"
   },
   {
-    "revision": "ee554f6db13696f320d7",
+    "revision": "59b1f6d0099e329a2fb9",
     "url": "/SCL009-red-social-frameworks/static/css/main.a1b0da03.chunk.css"
   },
   {
-    "revision": "a2aff35317115943bb2c",
-    "url": "/SCL009-red-social-frameworks/static/js/2.df72f21c.chunk.js"
+    "revision": "716b6aa8477b9dc94f8e",
+    "url": "/SCL009-red-social-frameworks/static/js/2.0e13b691.chunk.js"
   },
   {
-    "revision": "ee554f6db13696f320d7",
-    "url": "/SCL009-red-social-frameworks/static/js/main.38a82fd0.chunk.js"
+    "revision": "59b1f6d0099e329a2fb9",
+    "url": "/SCL009-red-social-frameworks/static/js/main.abf2aa6c.chunk.js"
   },
   {
     "revision": "a9b42562a2f20ac3095f",
