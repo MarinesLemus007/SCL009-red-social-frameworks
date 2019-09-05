@@ -1,17 +1,34 @@
 import React, {Component} from 'react';
 import logo from '../img/logo3.png';
 import { Link } from 'react-router-dom';
-
-import withFirebaseAuth from 'react-with-firebase-auth'
-import * as firebase from 'firebase/app';
+import firebase from '../firebase';
 import 'firebase/auth';
-import firebaseConfig from '../firebase';
-
-const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 class Login extends Component{
+    constructor(props){
+        super(props);
+        this.loginWithGoogle = this.loginWithGoogle.bind(this);
+    }
+       
+
+    loginWithGoogle(){
+        let provider = new firebase.auth.GoogleAuthProvider();
+        firebase.auth().signInWithPopup(provider).then(result => {
+            console.log(result);
+            
+            // let token = result.credential.accessToken;
+            // let user = result.user;
+
+        })//.catch(function(error) {
+        //     let errorCode = error.code;
+        //     let errorMessage = error.message;
+        //     let email = error.email;
+        //     let credential = error.credential;
+        // });
+    }
+
     render(){
-        const { user, signOut, signInWithGoogle} = this.props;
+        
         return ( 
             <section className="login-seccion">
                 <div className="login-content">
@@ -26,25 +43,15 @@ class Login extends Component{
                             <input type="password" className="login-password" placeholder="&#128272; Contraseña" name="password"/>
                             <Link to="/forgetpassword" className="link"><p className="login-text">¿Olvidaste tu contraseña?</p></Link>
                             <Link to="/home" className="link"><button type="button" className="login-button" id="btn-login" value="Iniciar sesión">Iniciar sesión</button></Link>
-                            <button className="login-button-two" onClick={signInWithGoogle}>Iniciar sesión con Google</button>
+                            <button type="button" className="login-button-two" onClick={this.loginWithGoogle}>Iniciar sesión con Google</button>
                             <Link to="/register" className="link"><p className="login-text-two">¿No tienes cuenta? Registrate aqui.</p></Link>
                         </form>
+                        
                     </div>
-                    { user ? <p>Hello, {user.displayName}</p>: <p>Please sign in.</p>}
                 </div>
             </section>
         );
     }
 }
 
-const firebaseAppAuth = firebaseApp.auth();
-
-const providers = {
-  googleProvider: new firebase.auth.GoogleAuthProvider(),
-};
-
-export default withFirebaseAuth({
-    providers,
-    firebaseAppAuth,
-  })(Login);
-// export default Login;
+export default Login;
