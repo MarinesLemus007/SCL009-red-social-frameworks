@@ -1,47 +1,85 @@
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 import logo from '../img/logo3.png';
 import { Link } from 'react-router-dom';
-// import firebase from '../firebase';
+import firebase from '../firebase';
 
-class Register extends Component{
-    constructor(props){
-        super(props);
-        this.state = {email:'', password:''};
-        this. mySubmitHandler = this. mySubmitHandler.bind(this);
-        // this.registerWithEmailAndPassword =  this.registerWithEmailAndPassword.bind(this);
-        this.handleEmail =  this.handleEmail.bind(this);
-        this.handlePassword =  this.handlePassword.bind(this);
+function Register(){
+    
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    
+
+    const handleNameChange = evt => {
+        const newValue = evt.target.value;
+        setName(newValue);
     }
 
-    handleEmail(event){
-        this.setState({email: event.target.value});
+    const handleEmailChange = evt => {
+        const newValue = evt.target.value;
+        setEmail(newValue);
+    }
+    
+    const handlePasswordChange = evt => {
+        const newValue = evt.target.value;
+        setPassword(newValue);
     }
 
-    handlePassword(event){
-         this.setState({password: event.target.value});
+    const handleSubmit = evt => {
+        evt.preventDefault();
+       
+        firebase.auth()
+        .createUserWithEmailAndPassword(email, password)
+        
+        .catch(error => {
+            // Handle Errors here.
+
+            // var errorCode = error.code;
+            // var errorMessage = error.message;
+            
+            // ...
+          });
+        
+        evt.target.name.value="";
+        evt.target.email.value="";
+        evt.target.password.value="";    
+        
+        // if(i.additionalUserInfo.isNewUser === true){
+        // sendEmailVerification();
+        // }
+
+        setName();
+        setEmail();
+        setPassword();
     }
 
-    mySubmitHandler(event){
-        alert("You are submitting " + this.state.email);
-         event.preventDefault();
-      }
-
-    // registerWithEmailAndPassword(event){
-    //     event.preventDefault();
-    //     let email = this.state.email;
-    //     let password = this.state.password;
-    //     console.log(email);
+    // function sendEmailVerification(){
+    //     // [START sendemailverification]
     //     firebase.auth()
-    //     .createUserWithEmailAndPassword(email, password)
-    //     .catch(error => {
-    //         // Handle Errors here.
-    //         // var errorCode = error.code;
-    //         // var errorMessage = error.message;
-    //         // ...
+    //     .currentUser.sendEmailVerification()
+    //     .then(function() {
+    //       // Email Verification sent!
+    //       // [START_EXCLUDE]
+    //       alert('Email Verification Sent!');
+    //       // [END_EXCLUDE]
     //     });
+    //     // [END 
     // }
 
-    render(){
+        // useEffect(() => {
+        //         firebase.auth()
+        //         .createUserWithEmailAndPassword(email, password)
+        //     }
+        // });
+        
+    //     catch(error){
+    //         // Handle Errors here.
+    //         //let errorCode = error.code;
+    //         // var errorMessage = error.message;
+    //         // ...
+    //     };
+    // }
+    
         return(
             <section className="register-seccion">
                 <div className="register-content">    
@@ -52,11 +90,11 @@ class Register extends Component{
                 
                     <div id="containerForm" className="register-body">
                     
-                        <form className="register-form" onSubmit={this.mySubmitHandler}>
+                        <form className="register-form" onSubmit={handleSubmit}>
                             <h2>Formulario de registro</h2>
-                            <input type="text" className="register-nickname" id="nickname" placeholder="Nombre de usuario" autoComplete="off" required/>
-                            <input type="email" className="register-email" id="email" placeholder="&#9993; correo@example.com" autoComplete="off" required value={this.state.email} onChange={this.props.handleEmail}/>
-                            <input type="password" className="register-password" id="password" placeholder="&#128272; Contraseña" autoComplete="off" required value={this.state.password} onChange={this.props.handlePassword}/>
+                            <input type="text" name="name" className="register-nickname" id="nickname" placeholder="Nombre de usuario" autoComplete="off" required  value={name} onChange={handleNameChange}/>
+                            <input type="email" name="email" className="register-email" id="email" placeholder="&#9993; correo@example.com" autoComplete="off" required value={email} onChange={handleEmailChange}/>
+                            <input type="password" name="password" className="register-password" id="password" placeholder="&#128272; Contraseña" autoComplete="off" required value={password} onChange={handlePasswordChange}/>
                             <input type="submit" value="Registrarse" className="register-button" id="btn-checkin2"/>
                             <Link to="/" className="link"> <button type="button" className="register-button-two" id="back">Volver</button></Link>
                         </form>
@@ -64,8 +102,7 @@ class Register extends Component{
 
                 </div>
             </section>
-        );
-    }
+        )
 }
 
 export default Register;
