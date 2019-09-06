@@ -2,13 +2,14 @@ import React, {useState} from 'react';
 import logo from '../img/logo3.png';
 import { Link } from 'react-router-dom';
 import firebase from '../firebase';
+import { Redirect } from 'react-router-dom';
 
 function Register(){
     
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [loading, setLoading] = useState(false);
 
     const handleNameChange = evt => {
         const newValue = evt.target.value;
@@ -38,19 +39,17 @@ function Register(){
             // var errorMessage = error.message;
             
             // ...
-          });
+          });   
         
-        evt.target.name.value="";
-        evt.target.email.value="";
-        evt.target.password.value="";    
-        
+          const newValue = true;
+            setLoading(newValue);
         // if(i.additionalUserInfo.isNewUser === true){
         // sendEmailVerification();
         // }
 
-        setName();
-        setEmail();
-        setPassword();
+        setName("");
+        setEmail("");
+        setPassword("");
     }
 
     // function sendEmailVerification(){
@@ -90,13 +89,14 @@ function Register(){
                 
                     <div id="containerForm" className="register-body">
                     
-                        <form className="register-form" onSubmit={handleSubmit}>
+                        <form className="register-form" value={loading} onSubmit={handleSubmit}>
                             <h2>Formulario de registro</h2>
-                            <input type="text" name="name" className="register-nickname" id="nickname" placeholder="Nombre de usuario" autoComplete="off" required  value={name} onChange={handleNameChange}/>
-                            <input type="email" name="email" className="register-email" id="email" placeholder="&#9993; correo@example.com" autoComplete="off" required value={email} onChange={handleEmailChange}/>
-                            <input type="password" name="password" className="register-password" id="password" placeholder="&#128272; Contraseña" autoComplete="off" required value={password} onChange={handlePasswordChange}/>
-                            <input type="submit" value="Registrarse" className="register-button" id="btn-checkin2"/>
-                            <Link to="/" className="link"> <button type="button" className="register-button-two" id="back">Volver</button></Link>
+                            <input type="text" name="name" className="register-nickname" placeholder="Nombre de usuario" autoComplete="off" required value={name} onChange={handleNameChange}/>
+                            <input type="email" name="email" className="register-email" placeholder="&#9993; correo@example.com" autoComplete="off" required value={email} onChange={handleEmailChange}/>
+                            <input type="password" name="password" className="register-password" placeholder="&#128272; Contraseña" autoComplete="off" required value={password} onChange={handlePasswordChange}/>
+                            <input type="submit" value="Registrarse" className="register-button" />
+                            {loading ? <Redirect to='/login' /> : <Redirect to='/register' />}
+                            <Link to="/" className="link"> <button type="button" className="register-button-two">Volver</button></Link>
                         </form>
                     </div>
 

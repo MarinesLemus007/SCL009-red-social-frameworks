@@ -55,7 +55,7 @@ class Login extends Component{
                             <input type="email" className="login-email" placeholder="&#9993; correo@example.com" />
                             <input type="password" className="login-password"  autoComplete="on" placeholder="&#128272; Contraseña"/>
                             <Link to="/forgetpassword" className="link"><p className="login-text">¿Olvidaste tu contraseña?</p></Link>
-                            <button type="button" className="login-button">Iniciar sesión</button>
+                            <input type="submit" value="Iniciar sesión" type="button" className="login-button" />
                             <button type="button" className="login-button-two" onClick={this.loginWithGoogle}>Iniciar sesión con Google</button>
                             {this.state.user? <Redirect to='/home' /> : <Redirect to='/login' />}
                             <Link to="/register" className="link"><p className="login-text-two">¿No tienes cuenta? Registrate aqui.</p></Link>
