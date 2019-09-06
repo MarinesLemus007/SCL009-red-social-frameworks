@@ -1,13 +1,14 @@
-import firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/auth';
 
 const config = {
-    apiKey: "AIzaSyC3ZnFk5qfpgwbGBg022nYGLcZd5TeJOi8",
-    authDomain: "red-social-laboratoria-ea8f4.firebaseapp.com",
-    databaseURL: "https://red-social-laboratoria-ea8f4.firebaseio.com",
-    projectId: "red-social-laboratoria-ea8f4",
-    storageBucket: "red-social-laboratoria-ea8f4.appspot.com",
-    messagingSenderId: "62105361806",
-    appId: "1:62105361806:web:4f45636c2bd7e2ca"
+    apiKey: "AIzaSyBqhKBBY-HUDbCI6059YsmazajHE5j-Q4g",
+    authDomain: "red-social-framework-616ea.firebaseapp.com",
+    databaseURL: "https://red-social-framework-616ea.firebaseio.com",
+    projectId: "red-social-framework-616ea",
+    storageBucket: "red-social-framework-616ea.appspot.com",
+    messagingSenderId: "129135873325",
+    appId: "1:129135873325:web:3a40d88443de1855"
 };
 
 firebase.initializeApp(config);
