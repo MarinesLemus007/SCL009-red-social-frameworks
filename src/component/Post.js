@@ -34,7 +34,7 @@ function Post(){
     }
    
         return(
-            <section className="home-seccion-two">
+            // <section className="home-seccion-two">
                 <div className="home-body">
 
                     <form className="home-form" onSubmit={handleSubmit}>
@@ -51,7 +51,7 @@ function Post(){
                     </form>   
 
                 </div>
-            </section>
+            // </section>
         )
     
 }

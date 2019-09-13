@@ -8,6 +8,7 @@ import Register from './component/Register';
 import ForgetPassword from './component/ForgetPassword';
 import Home from './component/Home';
 // import * as serviceWorker from './serviceWorker';
+import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
 
 const Root = (
     <BrowserRouter>

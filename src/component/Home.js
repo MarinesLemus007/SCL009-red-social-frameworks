@@ -3,6 +3,7 @@ import logo from '../img/logo3.png';
 import { Redirect } from 'react-router-dom';
 import firebase from '../firebase';
 import Post from './Post';
+import Wall from './Wall';
 
 class Home extends Component{
     constructor(props){
@@ -79,7 +80,10 @@ class Home extends Component{
                     </nav>
                       
                 </header> 
-                <Post/>
+                <section className="home-seccion-two">
+                    <Post/>
+                    <Wall/>
+                </section>
             </>    
         );
     }
