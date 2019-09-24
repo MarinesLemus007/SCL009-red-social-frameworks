@@ -1,16 +1,19 @@
 {
   "files": {
-    "main.css": "/SCL009-red-social-frameworks/static/css/main.a1b0da03.chunk.css",
-    "main.js": "/SCL009-red-social-frameworks/static/js/main.b588b84c.chunk.js",
-    "main.js.map": "/SCL009-red-social-frameworks/static/js/main.b588b84c.chunk.js.map",
+    "main.css": "/SCL009-red-social-frameworks/static/css/main.47c3c607.chunk.css",
+    "main.js": "/SCL009-red-social-frameworks/static/js/main.4bdb596e.chunk.js",
+    "main.js.map": "/SCL009-red-social-frameworks/static/js/main.4bdb596e.chunk.js.map",
     "runtime~main.js": "/SCL009-red-social-frameworks/static/js/runtime~main.2acb455e.js",
     "runtime~main.js.map": "/SCL009-red-social-frameworks/static/js/runtime~main.2acb455e.js.map",
-    "static/js/2.4c1bd75c.chunk.js": "/SCL009-red-social-frameworks/static/js/2.4c1bd75c.chunk.js",
-    "static/js/2.4c1bd75c.chunk.js.map": "/SCL009-red-social-frameworks/static/js/2.4c1bd75c.chunk.js.map",
+    "static/css/2.36b8494d.chunk.css": "/SCL009-red-social-frameworks/static/css/2.36b8494d.chunk.css",
+    "static/js/2.0b419bcf.chunk.js": "/SCL009-red-social-frameworks/static/js/2.0b419bcf.chunk.js",
+    "static/js/2.0b419bcf.chunk.js.map": "/SCL009-red-social-frameworks/static/js/2.0b419bcf.chunk.js.map",
     "index.html": "/SCL009-red-social-frameworks/index.html",
-    "precache-manifest.ebb177859efa950e42a1b9bc24990cb2.js": "/SCL009-red-social-frameworks/precache-manifest.ebb177859efa950e42a1b9bc24990cb2.js",
+    "precache-manifest.634757e719c3b7df89b9de6d48a9efff.js": "/SCL009-red-social-frameworks/precache-manifest.634757e719c3b7df89b9de6d48a9efff.js",
     "service-worker.js": "/SCL009-red-social-frameworks/service-worker.js",
-    "static/css/main.a1b0da03.chunk.css.map": "/SCL009-red-social-frameworks/static/css/main.a1b0da03.chunk.css.map",
+    "static/css/2.36b8494d.chunk.css.map": "/SCL009-red-social-frameworks/static/css/2.36b8494d.chunk.css.map",
+    "static/css/main.47c3c607.chunk.css.map": "/SCL009-red-social-frameworks/static/css/main.47c3c607.chunk.css.map",
+    "static/media/all.css": "/SCL009-red-social-frameworks/static/media/fa-solid-900.d6d8d5da.woff2",
     "static/media/logo3.png": "/SCL009-red-social-frameworks/static/media/logo3.b9709521.png"
   }
 }
