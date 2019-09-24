@@ -6,15 +6,17 @@ let user = firebase.auth().currentUser;
 console.log(user);
 
 class Wall extends Component {
-    constructor(){
-    super();
-    this.state= {post:[], edit:""}
+    constructor(props){
+    super(props);
+    this.state= {post:[], edit:'', newPost:''};
+
+    this.handleNewPostChange = this.handleNewPostChange.bind(this);
    
 }
    
     componentDidMount(){
        
-        db.collection("POST").get().then((snapShot) => {
+        db.collection("POST").onSnapshot((snapShot) => {
             
             this.setState({
 
@@ -40,10 +42,25 @@ class Wall extends Component {
             console.error("Error removing document: ", error);
         });
     }
+
+    handleNewPostChange=(event)=>{
+        this.setState({
+            newPost:event.target.value
+        })
+    }
+
+    actionEdit=(id)=>{
+        db.collection("POST").doc(id).update({
+            post:this.state.newPost
+        })
+    }
        
     render(){
         const{post}=this.state;
         const{edit}=this.state;
+        const{newPost}=this.state;
+        console.log(newPost)
+        console.log(edit)
         return(
             post && post !== undefined? post.map((el)=>
             // <section className="wall-seccion">
@@ -54,7 +71,7 @@ class Wall extends Component {
                         <div className="wall-post"> 
                             <div className="wall-text">nombre</div>
                             <div className="wall-input">
-                               { edit === el.id ? <input type="text"/> : <p>{el.data}</p>}
+                               { edit === el.id ? <input type="text"  className="wall-input-edit" value={newPost} onChange={this.handleNewPostChange}/> : <p>{el.data}</p>}
                             </div>
                         </div>
 
@@ -63,7 +80,7 @@ class Wall extends Component {
                                 <i className="fas fa-heart"></i>
                             </div>
                             <div className="wall-edit">
-                                <button className="wall-edit-button" onClick={()=> this.editPost(el.id)}><i className="fas fa-edit"></i></button>
+                                {edit === el.id ? <button onClick={()=>this.actionEdit(el.id)}>editar</button> : <button className="wall-edit-button" onClick={()=> this.editPost(el.id)}><i className="fas fa-edit"></i></button>}
                             </div>
                             <div className="wall-remove">
                                 <button onClick={()=> this.deletePost(el.id)}><i className="fas fa-trash-alt"></i></button>
