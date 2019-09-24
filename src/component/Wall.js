@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import firebase from '../firebase';
 
+let db = firebase.firestore();
+let user = firebase.auth().currentUser;
+console.log(user);
+
 class Wall extends Component {
-    
-    state= {post:[]}
-    
-  
+    constructor(){
+    super();
+    this.state= {post:[], edit:""}
+   
+}
+   
     componentDidMount(){
-        let db = firebase.firestore();
-        let user = firebase.auth().currentUser;
-        console.log(user);
-    
+       
         db.collection("POST").get().then((snapShot) => {
             
             this.setState({
@@ -22,9 +25,25 @@ class Wall extends Component {
             })
         })
     }
+
+    editPost = (id)=>{
+        this.setState({
+            edit:id
+        })
+    }
+
+    deletePost=(id)=>{
+        db.collection("POST").doc(id).delete()
+        .then(()=> {
+            console.log("Document successfully deleted!");
+        }).catch((error)=> {
+            console.error("Error removing document: ", error);
+        });
+    }
        
     render(){
         const{post}=this.state;
+        const{edit}=this.state;
         return(
             post && post !== undefined? post.map((el)=>
             // <section className="wall-seccion">
@@ -33,9 +52,9 @@ class Wall extends Component {
                     <div className="wall-form">
 
                         <div className="wall-post"> 
-                            <div className="wall-text">Nombre de usuario</div>
+                            <div className="wall-text">nombre</div>
                             <div className="wall-input">
-                                <p>{el.data}</p>
+                               { edit === el.id ? <input type="text"/> : <p>{el.data}</p>}
                             </div>
                         </div>
 
@@ -44,10 +63,10 @@ class Wall extends Component {
                                 <i className="fas fa-heart"></i>
                             </div>
                             <div className="wall-edit">
-                                <i className="fas fa-edit"></i>
+                                <button className="wall-edit-button" onClick={()=> this.editPost(el.id)}><i className="fas fa-edit"></i></button>
                             </div>
                             <div className="wall-remove">
-                                <i className="fas fa-trash-alt"></i>
+                                <button onClick={()=> this.deletePost(el.id)}><i className="fas fa-trash-alt"></i></button>
                             </div>
                         </div>
 

@@ -199,7 +199,6 @@ h4{
     margin-top: 100px;
     background-color: gainsboro;
     padding: 10px;
-    height: 110px;
 }
 
 .wall-form{
@@ -217,7 +216,7 @@ h4{
 
 .wall-input{
     background-color: white;
-    overflow: scroll;
+    /* overflow: scroll; */
 }
 
 .wall-body-button{
